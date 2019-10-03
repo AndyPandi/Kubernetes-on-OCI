@@ -13,3 +13,7 @@
 >[실습7 : kubernetes 모니터링 (Prometheus + Grafana)](/HandsOnLab700.md)  
 <!-- + [실습8 : kubernetes 모니터링 (EFK)](/HandsOnLab800.md)  
 + [실습9 : istio](/HandsOnLab900.md) -->
+
+* 빨강
+  * 녹색
+    * 파랑
