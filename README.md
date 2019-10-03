@@ -3,7 +3,7 @@
 오라클 클라우드에서는 Kubernetes(k8s) 를 활용한 PaaS 서비스인 OKE(Oracle Kubernetes Engine) 를 제공합니다.  
   
   
-#### 실습과정
+#### 실습과정  
 + [실습1 : OKE 클러스터 생성 및 k8s deployment 환경설정](/HandsOnLab100.md)
 + [실습2 : MSA 기반의 WebApplication Pod 배포1](/HandsOnLab200.md)
 + [실습3 : MSA 기반의 WebApplication Pod 배포2](/HandsOnLab300.md)
