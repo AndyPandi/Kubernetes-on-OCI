@@ -10,6 +10,7 @@
 + [실습3 : MSA 기반의 WebApplication Pod 배포2](/HandsOnLab300.md)
 + [실습4 : MSA 기반의 WebApplication Pod 배포3](/HandsOnLab400.md)
 + [실습5 : MSA 기반의 WebApplication Pod 배포4 (wercker 활용)](/HandsOnLab500.md)
-+ [실습6 : ingress](/HandsOnLab700.md6
-+ [실습7 : kubernetes 모니터링 - Prometheus + Grafana](/HandsOnLab600.md)
-+ [실습7 : istio](/HandsOnLab800.md)
++ [실습6 : ingress 설정](/HandsOnLab600.md)
++ [실습7 : kubernetes 모니터링 (Prometheus + Grafana)](/HandsOnLab700.md)
+<!-- + [실습8 : kubernetes 모니터링 (EFK)](/HandsOnLab800.md)
++ [실습9 : istio](/HandsOnLab900.md) -->
