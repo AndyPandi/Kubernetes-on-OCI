@@ -86,15 +86,15 @@ config  oci_api_key.pem  oci_api_key_public.pem
 
 - user OCID 확인방법
 
-[](resources/images/image03.png)
+![](resources/images/image03.png)
 
-[](resources/images/image04.png)
+![](resources/images/image04.png)
 
 - tenancy OCID 확인방법
 
-[](resources/images/image05.png)
+![](resources/images/image05.png)
 
-[](resources/images/image06.png)
+![](resources/images/image06.png)
 
 
 
