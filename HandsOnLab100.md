@@ -1,6 +1,6 @@
 # OKE 클러스터 생성 및 k8s deployment 환경설정
 
- 1. Policy 입력
+1. Policy 입력
  메뉴위치 : 거버넌스 및 관리 > ID > 정책 > **(버튼클릭) 정책 생성**
  
  정책입력 : **allow service OKE to manage all-resources in tenancy**
