@@ -2,7 +2,9 @@
 
  1. Policy 입력
  메뉴위치 : 거버넌스 및 관리 > ID > 정책 > **(버튼클릭) 정책 생성**
+ 
  정책입력 : **allow service OKE to manage all-resources in tenancy**
+ 
  루트(Root) 구획에 생성 필수
  생성 후 적용시점까지 몇 분 소요될 수 있음
  ![](resources/images/image01.png)
