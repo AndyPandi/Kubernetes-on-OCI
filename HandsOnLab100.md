@@ -84,16 +84,24 @@ Config written to /home/opc/.oci/config
 config  oci_api_key.pem  oci_api_key_public.pem
 ```
 
-- user OCID 확인방법
+user OCID 확인방법
+
+프로파일 > 사용자명 클릭
 
 ![](resources/images/image03.png)
- 
+
+사용자 세부정보 > OCID 복사 클릭
+
 ![](resources/images/image04.png)
 
-- tenancy OCID 확인방법
+tenancy OCID 확인방법
+
+프로파일 > 테넌시: xxx 클릭
 
 ![](resources/images/image05.png)
- 
+
+테넌시 정보 > OCID 복사 클릭
+
 ![](resources/images/image06.png)
 
 
