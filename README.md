@@ -4,9 +4,9 @@
   
   
 ### Labs
-* [Lab1 : OKE 클러스터 생성 및 k8s deployment 환경설정](/HandsOnLab101.md)
-* [Lab2 : OKE 클러스터 생성 및 k8s deployment 환경설정](/HandsOnLab102.md)
-* [Lab3 : MSA 기반의 Web Application Pod 배포](/HandsOnLab103.md)
+* [Lab1 : OKE 클러스터 생성 및 k8s deployment 환경설정](/HandsOnLab100.md)
+* [Lab2 : OKE 클러스터 생성 및 k8s deployment 환경설정](/HandsOnLab101.md)
+* [Lab3 : MSA 기반의 Web Application Pod 배포](/HandsOnLab102.md)
 <!--* [Lab3 : MSA 기반의 Web Application Pod 배포2](/HandsOnLab300.md)  
 * [Lab4 : MSA 기반의 Web Application Pod 배포3](/HandsOnLab400.md)  
 * [Lab5 : MSA 기반의 Web Application Pod 배포4 (wercker 활용)](/HandsOnLab500.md)  
