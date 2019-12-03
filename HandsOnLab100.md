@@ -36,7 +36,65 @@
 
 ### 3. Oracle Cloud CLI 설치 및 Configuration
 
-참고 : https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm
+OCI-CLI 설치 참고 : https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm
+
+```
+[opc@test ~]$ bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
+...
+...
+===> In what directory would you like to place the install? (leave blank to use '/home/opc/lib/oracle-cli'):   <-- 엔터
+...
+===> In what directory would you like to place the 'oci' executable? (leave blank to use '/home/opc/bin'):   <-- 엔터
+...
+===> In what directory would you like to place the OCI scripts? (leave blank to use '/home/opc/bin/oci-cli-scripts'):   <-- 엔터
+...
+===> Currently supported optional packages are: ['db (will install cx_Oracle)']
+What optional CLI packages would you like to be installed (comma separated names; press enter if you don't need any optional packages)?:   <-- 엔터
+...
+===> Modify profile to update your $PATH and enable shell/tab completion now? (Y/n): y
+===> Enter a path to an rc file to update (leave blank to use '/home/opc/.bashrc'):   <-- 엔터
+...
+...
+
+[opc@test ~]$ oci -v
+2.6.14
+```
+
+OCI-CLI config 생성
+
+```
+[opc@test ~]$ oci setup config
+...
+Enter a location for your config [/home/opc/.oci/config]:   <-- 엔터
+Enter a user OCID:  <-- 클라우드 콘솔에서 user OCID 복사 (아래 이미지 참고)
+Enter a tenancy OCID:   <-- 클라우드 콘솔에서 tenancy OCID 복사 (아래 이미지 참고)
+Enter a region (e.g. ap-mumbai-1, ap-seoul-1, ap-sydney-1, ap-tokyo-1, ca-toronto-1, eu-frankfurt-1, eu-zurich-1, sa-saopaulo-1, uk-gov-london-1, uk-london-1, us-ashburn-1, us-gov-ashburn-1, us-gov-chicago-1, us-gov-phoenix-1, us-langley-1, us-luke-1, us-phoenix-1): ap-seoul-1
+Do you want to generate a new RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/n]: y
+Enter a directory for your keys to be created [/home/opc/.oci]:
+Enter a name for your key [oci_api_key]:
+Public key written to: /home/opc/.oci/oci_api_key_public.pem
+Enter a passphrase for your private key (empty for no passphrase):
+Private key written to: /home/opc/.oci/oci_api_key.pem
+Fingerprint: e5:ef:17:98:6e:b3:e1:64:01:cc:46:85:7b:58:93:0b
+Config written to /home/opc/.oci/config
+...
+...
+
+[opc@test ~]$ ls .oci
+config  oci_api_key.pem  oci_api_key_public.pem
+```
+
+- user OCID 확인방법
+
+[](resources/images/image03.png)
+
+[](resources/images/image04.png)
+
+- tenancy OCID 확인방법
+
+[](resources/images/image05.png)
+
+[](resources/images/image06.png)
 
 
 
