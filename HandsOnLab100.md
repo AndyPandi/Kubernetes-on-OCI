@@ -36,7 +36,7 @@
 
 ### 3. Oracle Cloud CLI 설치 및 Configuration
 
-OCI-CLI 설치 참고 : https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm
+##### OCI-CLI 설치 참고 : https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm
 
 ```
 [opc@test ~]$ bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
@@ -60,7 +60,7 @@ What optional CLI packages would you like to be installed (comma separated names
 2.6.14
 ```
 
-OCI-CLI config 생성
+##### OCI-CLI config 생성
 
 ```
 [opc@test ~]$ oci setup config
@@ -103,6 +103,18 @@ config  oci_api_key.pem  oci_api_key_public.pem
   테넌시 정보 > OCID 복사 클릭
 
   ![](resources/images/image06.png)
+
+##### API 키 추가
+
+메뉴위치 : 거버넌스 및 관리 > ID > 사용자 > **`사용자 ID`** 클릭
+
+API 키 아래에 있는 ``공용 키 추가`` 버튼 클릭
+
+![](resource/images/image09.png)
+
+앞에서 생성한 ``oci_api_key_public.pem`` 파일을 열어서 내용 복사해서 붙여넣기
+
+![](resource/images/image10.png)
 
 
 
