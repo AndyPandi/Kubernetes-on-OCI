@@ -110,11 +110,11 @@ config  oci_api_key.pem  oci_api_key_public.pem
 
 API 키 아래에 있는 ``공용 키 추가`` 버튼 클릭
 
-![](resource/images/image09.png)
+![](resources/images/image09.png)
 
 앞에서 생성한 ``oci_api_key_public.pem`` 파일을 열어서 내용 복사해서 붙여넣기
 
-![](resource/images/image10.png)
+![](resources/images/image10.png)
 
 
 
