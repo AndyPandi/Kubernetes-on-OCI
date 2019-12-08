@@ -8,7 +8,7 @@
 
 샘플 웹애플리케이션 travel-agency 메인페이지 Pod 생성
 
-+[[kubernetes-deployment.yaml 파일 다운로드]](resources/kubernetes-deployment.yaml)
+- [kubernetes-deployment.yaml 파일 다운로드](resources/kubernetes-deployment.yaml)
 
 
 
@@ -16,7 +16,7 @@
 
 샘플 웹애플리케이션 travel-agency 메인페이지 접근을 위한 Service 생성
 
-+[[kubernetes-svc.yaml 파일 다운로드]](resources/kubernetes-svc.yaml)
+- [kubernetes-svc.yaml 파일 다운로드](resources/kubernetes-svc.yaml)
 
 
 
