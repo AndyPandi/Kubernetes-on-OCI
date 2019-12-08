@@ -34,9 +34,72 @@
 
 
 
-### 3. Oracle Cloud CLI 설치 및 Configuration
+### 3. Bastion Server 생성
 
-##### OCI-CLI 설치 참고 : https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm
+Oracle Kubernetes 에 접속하기 위한 Bastion Server를 생성합니다.
+
+메뉴위치 : 코어 인프라 > 컴퓨트 > 인스턴스 > **`인스턴스 생성`** 버튼 클릭
+
+![](resources/images/image021.png)
+
+* 인스턴스 이름 지정
+
+* 운영체제 또는 이미지 소스 선택 : Oracle Linux 7.7 (default)
+
+* ``구성, 네트워크, 스토리지 옵션 숨기기`` 클릭
+
+* 가용성 도메인 : AD1 (default)
+
+* 인스턴스 유형 : 가상 머신 (default)
+
+* 인스턴스 구성 : ``구성 변경`` 클릭 후 VM.Standard2.1 선택
+
+* 가상 클라우드 네트워크 구획 : 본인 구획 선택
+
+* 가상 클라우드 네트워크 : oke-xxx 선택 (OKE생성시 자동으로 만들어진 VNC)
+
+* 서브넷 구획 : 본인 구획 선택
+
+* 서브넷 : oke-xxx (공용서브넷 선택)
+
+* ``공용 IP 주소 지정`` 선택 (= Public IP 생성)
+
+* SSH 키 추가 : 파일 선택 후 SSH Public Key 선택
+
+  (※ 참고 SSH Key 생성방법)
+
+* ``생성`` 버튼 클릭
+
+
+
+### 4. Bastion Server 접속 및 Oracle Cloud CLI 설치
+
+생성한 Bastion Server 에 Oracle Cloud CLI 를 설치합니다.
+
+메뉴위치 : 코어 인프라 > 컴퓨트 > 인스턴스 > 이전에 생성한 컴퓨트 인스턴스 클릭
+
+![](resources/images/image022.png)
+
+- 생성한 Bastion Server 의 공용(Public) IP 주소 확인
+
+##### 4.1 PuTTY 를 이용한 접속
+
+![](resources/images/image023.png)
+
+- Host Name : Public IP
+- Connection type : SSH
+- Saved Sessions : 세션 저장 이름 (임의로 입력)
+
+![](resources/images/image024.png)
+
+- 왼쪽메뉴 ``Connection > SSH > Auth` 클릭
+- Private key file for authentication : 생성한 SSH 키의 Private 키 선택
+
+세션 저장 후 접속 테스트
+
+
+
+##### 4.2 OCI-CLI 설치 참고 : https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm
 
 ```
 [opc@test ~]$ bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
@@ -60,7 +123,7 @@ What optional CLI packages would you like to be installed (comma separated names
 2.6.14
 ```
 
-##### OCI-CLI config 생성
+##### 4.3 OCI-CLI config 생성
 
 ```
 [opc@test ~]$ oci setup config
@@ -104,7 +167,7 @@ config  oci_api_key.pem  oci_api_key_public.pem
 
   ![](resources/images/image06.png)
 
-##### API 키 추가
+##### 4.4 API 키 추가
 
 메뉴위치 : 거버넌스 및 관리 > ID > 사용자 > **`사용자 ID`** 클릭
 
@@ -118,7 +181,9 @@ API 키 아래에 있는 ``공용 키 추가`` 버튼 클릭
 
 
 
-### 4. Kubectl 설치
+### 5. Kubectl 설치
+
+생성한 Bastion Server 에 Kubectl 을 설치합니다.
 
 참고 : https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
 
