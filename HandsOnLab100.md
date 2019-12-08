@@ -82,7 +82,7 @@ Oracle Kubernetes 에 접속하기 위한 Bastion Server를 생성합니다.
 
 - 생성한 Bastion Server 의 공용(Public) IP 주소 확인
 
-##### 4.1 PuTTY 를 이용한 접속
+#### 4.1 PuTTY 를 이용한 접속
 
 ![](resources/images/image023.png)
 
@@ -99,7 +99,9 @@ Oracle Kubernetes 에 접속하기 위한 Bastion Server를 생성합니다.
 
 
 
-##### 4.2 OCI-CLI 설치 참고 : https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm
+#### 4.2 OCI-CLI 설치
+
+참고 URL : https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm
 
 ```
 [opc@test ~]$ bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
@@ -123,7 +125,9 @@ What optional CLI packages would you like to be installed (comma separated names
 2.6.14
 ```
 
-##### 4.3 OCI-CLI config 생성
+
+
+#### 4.3 OCI-CLI config 생성
 
 ```
 [opc@test ~]$ oci setup config
@@ -167,7 +171,9 @@ config  oci_api_key.pem  oci_api_key_public.pem
 
   ![](resources/images/image06.png)
 
-##### 4.4 API 키 추가
+
+
+#### 4.4 API 키 추가
 
 메뉴위치 : 거버넌스 및 관리 > ID > 사용자 > **`사용자 ID`** 클릭
 
