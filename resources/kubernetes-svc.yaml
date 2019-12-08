@@ -1,0 +1,69 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ta-front
+  labels:
+    run: ta-front
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: ta-front
+    spec:
+      containers:
+      - image: $OKE_REPOSITORY/$WERCKER_APPLICATION_NAME:$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        #imagePullPolicy: IfNotPresent 
+        imagePullPolicy: Always 
+        name: ta-front
+        ports:
+        - containerPort: 8000 
+          protocol: TCP
+      restartPolicy: Always
+      imagePullSecrets:
+        - name: ocirsecret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ta-front-svc
+  #spec:
+  #  type: NodePort
+  #  ports:
+  #  - name: http
+  #    port: 9004
+  #    targetPort: 8000
+  #    nodePort: 30008
+  #    protocol: TCP
+  #  selector:
+  #    run: ta-front
+spec:
+  type: ClusterIP
+  selector:
+    run: ta-front 
+  ports:
+    - port: 9004
+      targetPort: 8000
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ta-front-ing
+  annotations:
+    kubernetes.io/ingress.class: 'nginx'
+    ingress.kubernetes.io/add-base-url: 'true'
+    ingress.kubernetes.io/rewrite-target: /
+    #ingress.kubernetes.io/app-root: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /travel/
+        backend:
+          serviceName: ta-front-svc
+          servicePort: 9004
