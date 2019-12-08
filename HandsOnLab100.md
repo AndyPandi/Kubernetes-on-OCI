@@ -66,7 +66,13 @@ Oracle Kubernetes 에 접속하기 위한 Bastion Server를 생성합니다.
 
 * SSH 키 추가 : 파일 선택 후 SSH Public Key 선택
 
-  (※ 참고 SSH Key 생성방법)
+  - SSH Key 생성방법 (PuTTY Key Generator 실행)
+
+    ![](resources/images/image025.png)
+
+    ``Generate`` 버튼클릭 후 PuTTY Key Generator 화면 위에서 마우스 무작위로 움직임
+
+    키 생성완료 후 ``Save public key`` , ``Save private key`` 버튼으로 Public / Private Key 저장
 
 * ``생성`` 버튼 클릭
 
@@ -92,7 +98,7 @@ Oracle Kubernetes 에 접속하기 위한 Bastion Server를 생성합니다.
 
 ![](resources/images/image024.png)
 
-- 왼쪽메뉴 ``Connection > SSH > Auth` 클릭
+- 왼쪽메뉴 ``Connection > SSH > Auth`` 클릭
 - Private key file for authentication : 생성한 SSH 키의 Private 키 선택
 
 세션 저장 후 접속 테스트
