@@ -1,29 +1,30 @@
+### 1. Kubernetes 대시보드 접속
+
+이전 실습을 참고해서 Kubernetes 대시보드에 접속
 
 
 
+### 2. Pod 생성
+
+샘플 웹애플리케이션 travel-agency 메인페이지 Pod 생성
+
++[[kubernetes-deployment.yaml 파일 다운로드]](resources/kubernetes-deployment.yaml)
 
 
 
-### 5. Kubernetes config 파일 액세스
+### 3. Service 생성
 
-### 5. Kubernetes config 파일 액세스
+샘플 웹애플리케이션 travel-agency 메인페이지 접근을 위한 Service 생성
 
-핸즈온 과정에서 진행하게 될 MAS 기반의 Web Application 을 배포할 namespace 를 생성합니다.
-
-Kubernetes 에서 namespace 는 논리적인 구획입니다.
-
-```
-ubuntu@test:~$ kubectl create namespace travel-agency
-```
++[[kubernetes-svc.yaml 파일 다운로드]](resources/kubernetes-svc.yaml)
 
 
 
-### 6. Kubernetes secret 생성
+### 4. 샘플 웹 애플리케이션 접속
 
-위에서 생성한 namespace에서 사용할 secret을 생성합니다.
+Local PC에서 웹브라우저 실행 후 해당 서비스 IP:Port 로 접속
 
-> secret은 보안이 중요한 패스워드나, API 키, 인증서 파일들은 secret에 저장할 수 있습니다. secret은 항상 메모리에 저장되어 있기 때문에 상대적으로 접근이 어렵습니다. 하나의 secret의 사이즈는 최대 1M까지 지원되는데, 메모리에 지원되는 특성 때문에, secret을 여러개 저장하게 되면 API Server나 노드에서 이를 저장하는 kubelet의 메모리 사용량이 늘어나서 Out Of Memory와 같은 이슈를 유발할 수 있기 때문에, 보안적으로 꼭 필요한 정보만 secret에 저장하도록 하는게 좋습니다.
+````
+ex) 145.2.5.155:9004
+````
 
-```
-ubuntu@test:~$ kubectl create secret docker-registry ocirsecret --docker-server=<region-code>.ocir.io --docker-username='<tenancy-namespace>/<oci-username>' --docker-password='<oci-auth-token>' --docker-email='<email-address>'
-```
