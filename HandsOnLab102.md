@@ -1,10 +1,4 @@
-### 1. Kubernetes 대시보드 접속
-
-이전 실습을 참고해서 Kubernetes 대시보드에 접속
-
-
-
-### 2. Namespace 및 Secret 생성
+### 1. Namespace 및 Secret 생성
 
 Hands-on 과정에서 진행하게될 MSA 기반의 Web Application 을 배포할 namespace 및 Secret을 생성합니다.
 
@@ -23,9 +17,9 @@ kube-system      Active   24d
 travel-agency    Active   21d
 ````
 
-다음은 Secret 생성입니다.
+다음은 Oracle Cloud Infrastructure Registry에 올려놓은 컨테이너 이미지를 Pull 하기위한 인증정보를 저장하는 Secret을 생성합니다.
 
-> secret은 보안이 중요한 패스워드나, API 키, 인증서 파일들은 secret에 저장할 수 있습니다. secret은 항상 메모리에 저장되어 있기 때문에 상대적으로 접근이 어렵습니다. 하나의 secret의 사이즈는 최대 1M까지 지원되는데, 메모리에 지원되는 특성 때문에, secret을 여러개 저장하게 되면 API Server나 노드에서 이를 저장하는 kubelet의 메모리 사용량이 늘어나서 Out Of Memory와 같은 이슈를 유발할 수 있기 때문에, 보안적으로 꼭 필요한 정보만 secret에 저장하도록 하는게 좋습니다.
+> secret은 보안이 중요한 패스워드나, API 키, 인증서 파일들은 secret에 저장할 수 있습니다. 하나의 secret의 사이즈는 최대 1M까지 지원되는데, 메모리에 저장되는 특성 때문에, secret을 여러개 저장하게 되면 API Server나 노드에서 이를 저장하는 kubelet의 메모리 사용량이 늘어나서 Out Of Memory와 같은 이슈를 유발할 수 있기 때문에, 보안적으로 꼭 필요한 정보만 secret에 저장하도록 하는게 좋습니다.
 
 ````
 kubectl create secret docker-registry ocirsecret --docker-server=<region-code>.ocir.io --docker-username='<tenancy-namespace>/<oci-username>' --docker-password='<oci-auth-token>' --docker-email='<email-address>' -n namespace
@@ -38,7 +32,7 @@ kubectl create secret docker-registry ocirsecret --docker-server=<region-code>.o
 
 
 
-### 3. Pod 생성
+### 2. Pod 생성
 
 샘플 웹애플리케이션 travel-agency 메인페이지 Pod 생성
 
@@ -63,7 +57,7 @@ Kubernetes 대시보드를 사용한 생성
 
 
 
-### 4. Service 생성
+### 3. Service 생성
 
 샘플 웹애플리케이션 travel-agency 메인페이지 접근을 위한 Service 생성
 
@@ -86,7 +80,7 @@ ta-front   LoadBalancer   10.96.226.22   140.238.20.78   9004:30802/TCP   47s
 
 
 
-### 5. 샘플 웹 애플리케이션 접속
+### 4. 샘플 웹 애플리케이션 접속
 
 Local PC에서 웹브라우저 실행 후 해당 서비스 IP:Port 로 접속
 
