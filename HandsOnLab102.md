@@ -2,7 +2,9 @@
 
 Hands-on 과정에서 진행하게될 MSA 기반의 Web Application 을 배포할 namespace 및 Secret을 생성합니다.
 
-> Kubernetes 에서 namespace 는 논리적인 구획입니다.
+> Kubernetes 에는 동일한 물리 클러스터를 기반으로 하는 복수의 가상 클러스터를 지원합니다. 이들 가상 클러스터를 Namespace 라고 합니다.
+>
+> Namespace는 복수의 팀이나, 프로젝트에 걸쳐서 많은 사용자가 있는 환경에서 사용. Namespace는 이름의 범위를 제공한다. 리소스의 이름은 Namespace 내에서 유일해야하지만, 전체 Namespace를 통틀어서 유일할 필요는 없다.
 
 Bastion Server 접속 후 다음 명령어 실행
 
