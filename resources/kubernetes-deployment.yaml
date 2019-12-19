@@ -24,5 +24,3 @@ spec:
             - containerPort: 8000 
               protocol: TCP
       restartPolicy: Always
-      imagePullSecrets:
-        - name: ocirsecret
